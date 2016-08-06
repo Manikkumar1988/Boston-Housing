@@ -25,7 +25,7 @@ def ModelLearning(X, y):
     fig = pl.figure(figsize=(10,7))
 
     # Create three different models based on max_depth
-    for k, depth in enumerate([10,50,100,150,200]):
+    for k, depth in enumerate([1,3,6,10]):
         
         # Create a Decision tree regressor at max_depth = depth
         regressor = DecisionTreeRegressor(max_depth = depth)
@@ -40,8 +40,6 @@ def ModelLearning(X, y):
         test_std = np.std(test_scores, axis = 1)
         test_mean = np.mean(test_scores, axis = 1)
 
-        print train_scores
-        print 'depth is '+k
 
         # Subplot the learning curve 
         ax = fig.add_subplot(2, 2, k+1)
